@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .swiper-item,.image{
+            width:500px;
+            height:300px;
+        }
+        p{
+            font-size:50px;
+            position:absolute;
+            left:0px;
+            bottom:0px;
+            color:white;
+
+        }
+        .image{
+            position:absolute;
+            left:0px;
+            top:0px;
+        }
+        .swiper-item{
+            position:absolute;
+            transition:all 0.7s linear 0s;
+        }
+        #swiper{
+            position:relative;
+            left:400px;
+            top:100px;
+            width:1000px;
+            height:600px;
+            border:1px solid black;
+        }
+        .swiper-item:nth-child(1){
+            left:250px;
+            top:300px;
+            z-index:999;
+        }
+        .swiper-item:nth-child(2){
+            left:200px;
+            top:250px;
+            /*变换原点，默认是图片的最中心*/
+            transform-origin: left bottom;
+            transform:scale(1.2,1.2);
+            z-index:99;
+            opacity:0.7;
+        }
+        .swiper-item:nth-child(3){
+            left:100px;
+            top:200px;
+            /*变换原点，默认是图片的最中心*/
+            transform-origin: left bottom;
+            transform:scale(1.6,1.6);
+            z-index:9;
+            opacity:0.5;
+        }
+        .swiper-item:nth-child(4){
+            left:0px;
+            top:100px;
+            /*变换原点，默认是图片的最中心*/
+            transform-origin: left bottom;
+            transform:scale(2,2);
+            opacity:0.3;
+        }
+    </style>
+</head>
+<body>
+    <div id="swiper">
+        <div class="swiper-item">
+            <img src="1.jpeg" alt="" class="image">
+            <p class="username">孤儿：亚索</p>
+        </div>
+        <div class="swiper-item">
+            <img src="2.jpeg" alt="" class="image">
+            <p class="username">草里蹲：盖伦</p>
+        </div>
+        <div class="swiper-item">
+            <img src="3.jpg" alt="" class="image">
+            <p class="username">九尾妖狐：阿狸</p>
+        </div>
+        <div class="swiper-item">
+            <img src="4.jpg" alt="" class="image">
+            <p class="username">奶妈：索拉卡</p>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    swiper.onclick = function(){
+        //  获取到当前的所有swiper-itam
+        var item = document.getElementsByClassName('swiper-item');
+        console.log(item);
+        //  获取到页面数组的第一个
+        var first = item[0];
+
+        //  把第一个插入到swiper里面
+        swiper.appendChild(first);
+    }
+
+
+</script>
